@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: brown; ">
+    <div id="parent">
+      <h1>Click for backgrround change</h1>
+      <button id="red" style="background-color: red;">Red</button>
+      <button id="blue" style="background-color: blue;">Blue</button> 
+      <button id="yellow" style="background-color: yellow;">Yellow</button>
+      <button id="pink" style="background-color: pink;">Pink</button>
+      <button id="orange" style="background-color: orange;">Orange</button>
+    </div>
+
+    <script>
+      
+      const parent = document.getElementById('parent')
+      parent.addEventListener('click',(e)=>{
+        // console.log(e.target)
+        const child = e.target;
+        const changer = document.querySelector('body');
+        changer.style.backgroundColor = child.id;
+      })
+    </script>
+  </body>
+</html>

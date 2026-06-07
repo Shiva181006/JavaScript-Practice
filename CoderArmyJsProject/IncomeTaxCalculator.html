@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: aqua;">
+  <div>
+    <h1>Tax Calculater</h1>
+    <form >
+      <label for="amount">Amount</label>
+      <input type="text" id="amount">
+      <br><br>
+      <button id="submit">Tax Calculate</button>
+    </form>
+    <h2>Total Tax : </h2>
+  </div>
+
+  <script>
+    const form = document.querySelector('form')
+    form.addEventListener('submit',(e)=>{
+
+      e.preventDefault();
+      const income = document.getElementById('amount');
+      const amount = parseInt(income.value)
+      let tax = 0;
+      
+      if(amount <= 1200000){
+        tax = 0;
+      }
+      else if(amount <= 1600000){ // 15% on 16lakh
+        tax = (amount - 1200000)*0.15
+      }
+      else if(amount <= 2000000){ // 20% on 20lakh so firstly we calculate 16 lakh tax then 20 lakh
+        tax = (amount - 1600000)*0.20 + 60000;
+      }
+      else if (amount <= 2400000) {
+        tax = (amount - 2000000)*0.25 + 80000 + 60000;
+
+      }else{
+        tax = (amount - 2000000)*0.30 +100000+80000 + 60000;
+      }
+
+      const result = document.querySelector('h2')
+      result.innerText = `Total Tax : ${tax}`;
+    
+      form.reset()
+    })
+  </script>
+</body>
+</html>

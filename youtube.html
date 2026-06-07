@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Endless Snake</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            color: lime;
+            font-family: monospace;
+            overflow-x: hidden;
+        }
+
+        #snake {
+            white-space: pre;
+            font-size: 20px;
+            line-height: 20px;
+            padding-left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+<pre id="snake">
+         /^\/^\
+       _|__|  O|
+\/     /~     \
+ \____|________\
+        \_______\
+</pre>
+
+<script>
+
+let snake = document.getElementById("snake");
+
+function addBodyParts(count) {
+
+    let body = "";
+
+    for(let i = 0; i < count; i++) {
+
+        body += `
+            ||       ||
+            ||       ||
+            ||       ||
+        `;
+    }
+
+    snake.innerHTML += body;
+}
+
+// Initial body so page becomes scrollable
+addBodyParts(50);
+
+// Infinite scroll logic
+window.addEventListener("scroll", function () {
+
+    if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
+
+        addBodyParts(20);
+    }
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; background-color: aquamarine;">
+  <div>
+    <h1>Count Down Timer</h1>
+    <h2 id="time"></h2>
+  </div>
+  
+  <script>
+    const update = document.querySelector('h2')
+
+    setInterval(()=>{
+
+
+      const currTime = new Date();
+  
+      const OlympicTime = new Date(2028,6,14).getTime() // give in milisecond in Date(2028-year , 6 - month , 14 - date)
+      
+      let timer = OlympicTime - currTime;  // give in millisecond
+  
+      const day = Math.floor((timer)/(1000*60*60*24));
+      timer %= (1000*60*60*24);
+  
+      const hour = Math.floor((timer)/(1000*60*60));
+      timer %= (1000*60*60);
+  
+      const minute = Math.floor((timer)/(1000*60));
+      timer %= (1000*60);
+  
+      const second = Math.floor((timer)/(1000));
+      timer %= (1000);
+  
+      update.innerText = `${day}: Days ${hour}: Hour ${minute}: Minutes ${second}: Second`
+    },1000)
+
+  </script>
+</body>
+</html>
