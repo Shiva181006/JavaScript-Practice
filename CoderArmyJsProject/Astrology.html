@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+      "
+    >
+      <h1>Astrology Insights</h1>
+
+      <form
+       id="astrology"
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 0.5rem;
+          border: 2px solid black;
+          padding: 45px;
+          background-color: azure;
+        "
+      >
+        <label for="name">First Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter First Name"
+        />
+
+        <label for="lastname">Last Name</label>
+        <input
+          type="text"
+          id="lastname"
+          name="lastname"
+          placeholder="Enter last Name"
+        />
+
+        <label for="day">Date of Birth(Day)</label>
+        <input type="number" id="day" name="day" min="1" max="31" />
+
+        <label for="month">Month</label>
+        <input type="number" id="month" name="month" min="1" max="12" />
+
+        <label for="year">Year</label>
+        <input type="number" id="year" name="year" min="1990" max="2026" />
+
+        <button type="submit">Submit</button>
+      </form>
+      <div class="result" id="result"></div>
+    </div>
+    <script>
+      const zodiacSigns = [
+        "Aries",
+        "Taurus",
+        "Gemini",
+        "Cancer",
+        "Leo",
+        "Virgo",
+        "Libra",
+        "Scorpio",
+        "Sagittarius",
+        "Capricorn",
+        "Aquarius",
+        "Pisces",
+      ];
+      const compliments = [
+        "You have a great sense of humor.",
+        "Your positivity is contagious.",
+        "You bring out the best in people.",
+        "You are incredibly thoughtful.",
+        "Your creativity is inspiring.",
+        "You make difficult things look easy.",
+        "You have a kind heart.",
+        "Your confidence is admirable.",
+        "You are a great listener.",
+        "You have excellent taste.",
+        "Your determination is impressive.",
+        "You light up every room you enter.",
+        "You are wonderfully authentic.",
+        "Your ideas are always interesting.",
+        "You have a calming presence.",
+        "You are exceptionally reliable.",
+        "Your enthusiasm is motivating.",
+        "You make people feel valued.",
+        "You have a sharp mind.",
+        "Your generosity stands out.",
+        "You handle challenges with grace.",
+        "You are naturally inspiring.",
+        "Your attention to detail is remarkable.",
+        "You have a fantastic perspective on life.",
+        "You make teamwork enjoyable.",
+        "Your energy is uplifting.",
+        "You are stronger than you realize.",
+        "You have a gift for solving problems.",
+        "Your compassion makes a difference.",
+        "You are genuinely memorable.",
+        "You make the world a little brighter.",
+      ];
+
+      const victimCardCompliments = [
+        "Your strength through difficult times is inspiring.",
+        "You have shown remarkable resilience.",
+        "Your courage deserves recognition.",
+        "You continue to move forward despite challenges.",
+        "Your determination is admirable.",
+        "You have handled so much with grace.",
+        "Your perseverance is truly impressive.",
+        "You are stronger than many people realize.",
+        "Your ability to keep going is remarkable.",
+        "You deserve credit for how far you've come.",
+        "Your resilience shines through adversity.",
+        "You have a powerful inner strength.",
+        "Your bravery makes a difference.",
+        "You continue to inspire others with your courage.",
+        "You have overcome obstacles with dignity.",
+        "Your patience and endurance are commendable.",
+        "You show incredible character in tough situations.",
+        "Your recovery and growth are inspiring.",
+        "You have every reason to be proud of yourself.",
+        "Your strength is greater than your struggles.",
+      ];
+
+      const recommendations = [
+        "Take a short walk outside today.",
+        "Drink an extra glass of water.",
+        "Get at least 7–8 hours of sleep tonight.",
+        "Try a new healthy recipe this week.",
+        "Spend 10 minutes stretching.",
+        "Read a few pages of a good book.",
+        "Practice gratitude by listing 3 good things.",
+        "Take a break from social media for an hour.",
+        "Listen to your favorite music.",
+        "Organize a small area of your workspace.",
+        "Call or message someone you care about.",
+        "Try a guided meditation session.",
+        "Learn one new thing today.",
+        "Spend time in nature if possible.",
+        "Set a small achievable goal for the day.",
+        "Take regular screen breaks.",
+        "Write down your thoughts in a journal.",
+        "Do a quick workout or exercise session.",
+        "Treat yourself to a healthy snack.",
+        "Practice deep breathing for a few minutes.",
+        "Declutter something you no longer need.",
+        "Watch or read something inspiring.",
+        "Focus on one task at a time.",
+        "Celebrate a small win today.",
+        "Try a new hobby or activity.",
+        "Plan something to look forward to.",
+        "Be kind to yourself today.",
+        "Spend quality time with family or friends.",
+        "Learn a new skill or improve an existing one.",
+        "End the day by reflecting on your progress.",
+      ];
+
+
+      const form = document.getElementById("astrology")
+      
+      form.addEventListener('submit',(e)=>{
+        e.preventDefault();
+
+        const firstName = document.getElementById("name").value;
+        const lastName = document.getElementById("lastname").value;
+        const day = parseInt(document.getElementById("day").value);
+        const month = parseInt(document.getElementById("month").value);
+        const year = parseInt(document.getElementById("year").value);
+        
+        const text = `Hi ${firstName} ${lastName} , your Zodiac Sign is ${zodiacSigns[month-1]} , ${compliments[day-1]} , ${victimCardCompliments[year%20]}, ${recommendations[day-1]}`
+
+        document.getElementById("result").textContent = text;
+      })
+    </script>
+  </body>
+</html>
