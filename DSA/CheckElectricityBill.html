@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electricity Bill</title>
+</head>
+<body>
+
+<h1>Electricity Bill Calculator</h1>
+
+<script>
+let a = Number(prompt("Enter electricity units:"));
+let b = 0;
+
+if (isNaN(a) || a < 0) {
+    alert("Please enter a valid number.");
+} else {
+    if (a > 400) {
+        b = (a - 400) * 13 + 200 * 8 + 100 * 6 + 100 * 4.2;
+    } else if (a > 200) {
+        b = (a - 200) * 8 + 100 * 6 + 100 * 4.2;
+    } else if (a > 100) {
+        b = (a - 100) * 6 + 100 * 4.2;
+    } else {
+        b = a * 4.2;
+    }
+
+    console.log("Electricity Bill = ₹" + b);
+    document.write("<h2>Electricity Bill = ₹" + b + "</h2>");
+}
+</script>
+
+</body>
+</html>
