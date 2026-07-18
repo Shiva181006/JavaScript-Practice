@@ -1,0 +1,488 @@
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Interview practice HTML form" />
+    <meta name="robots" content="index,follow" />
+    <title>Employee Onboarding - Part 1</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="container">
+      <h1>Employee Onboarding Portal</h1>
+      <p>HTML Form Interview Practice</p>
+    </header>
+
+    <main class="container">
+      <form action="/submit" method="post" autocomplete="on" novalidate>
+        <fieldset>
+          <legend>Personal Information</legend>
+
+          <div class="field">
+            <label for="fullname">Full Name *</label>
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              placeholder="Enter full name"
+              required
+              minlength="3"
+              maxlength="50"
+              autocomplete="name"
+            />
+          </div>
+
+          <div class="field">
+            <label for="email">Email *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="name@example.com"
+              required
+              autocomplete="email"
+            />
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone *</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              pattern="[0-9]{10}"
+              inputmode="numeric"
+              placeholder="9876543210"
+              required
+              autocomplete="tel"
+            />
+          </div>
+
+          <div class="field">
+            <label for="dob">Date of Birth *</label>
+            <input type="date" id="dob" name="dob" required />
+          </div>
+
+          <div class="field">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+              <option value="">Select</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="password">Password *</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              minlength="8"
+              aria-describedby="pwdHelp"
+            />
+            <small id="pwdHelp">
+              Browser validation is NOT security. Validate again on the server.
+            </small>
+          </div>
+
+          <div class="field">
+            <label for="bio">Short Bio</label>
+            <textarea id="bio" name="bio" rows="4"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="country">Country</label>
+            <input list="countries" id="country" name="country" />
+            <datalist id="countries">
+              <option value="India"></option>
+              <option value="Canada"></option>
+              <option value="Germany"></option>
+              <option value="Japan"></option>
+            </datalist>
+          </div>
+
+          <div class="field">
+            <label for="photo">Profile Photo</label>
+            <input
+              type="file"
+              id="photo"
+              name="photo"
+              accept=".png,.jpg,.jpeg,image/png,image/jpeg"
+            />
+          </div>
+
+          <div class="field checkbox">
+            <input type="checkbox" id="terms" required />
+            <label for="terms">I accept Terms & Privacy Policy</label>
+          </div>
+
+          <div class="buttons">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+            <button type="button">Save Draft</button>
+          </div>
+        </fieldset>
+
+        <section>
+          <h2>Interview Notes</h2>
+          <ul>
+            <li>Always use &lt;label&gt; with form controls.</li>
+            <li>POST is preferred for sensitive data.</li>
+            <li>Never trust HTML validation.</li>
+            <li>Validate uploaded files on the server.</li>
+            <li>Use HTTPS in production.</li>
+          </ul>
+        </section>
+      </form>
+    </main>
+  </body>
+</html> -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Interview practice HTML5 forms" />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="Practice Project" />
+    <meta name="theme-color" content="#2563eb" />
+    <link rel="canonical" href="https://example.com/form" />
+    <meta property="og:title" content="Employee Onboarding" />
+    <meta property="og:description" content="HTML Form Practice" />
+    <title>HTML Forms Masterclass - Part 1</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Skip link improves keyboard accessibility -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header><h1>Employee Onboarding Portal</h1></header>
+    <main id="main">
+      <form action="/submit" method="post" autocomplete="on" novalidate>
+        <fieldset>
+          <legend>Personal Information</legend>
+          <!-- ================= FIELD 1 ================= -->
+          <!-- Interview: Why use type='text' instead of text? -->
+          <!-- Security: Browser validation is NOT security. -->
+          <!-- Accessibility: Every input has a connected label. -->
+          <div class="field">
+            <label for="fullname">Full Name</label>
+            <input
+              id="fullname"
+              name="fullname"
+              type="text"
+              autocomplete="name"
+              required
+              minlength="3"
+              maxlength="50"
+            />
+          </div>
+          
+          <!-- Note 12: Learn why the 'fullname' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- ================= FIELD 2 ================= -->
+          <!-- Interview: Why use type='email' instead of text? -->
+          <!-- Security: Browser validation is NOT security. -->
+          <!-- Accessibility: Every input has a connected label. -->
+          <div class="field">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+            />
+          </div>
+          <!-- Note 1: Learn why the 'email' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 2: Learn why the 'email' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 3: Learn why the 'email' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 4: Learn why the 'email' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 5: Learn why the 'email' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 6: Learn why the 'email' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 7: Learn why the 'email' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 8: Learn why the 'email' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 9: Learn why the 'email' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 10: Learn why the 'email' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 11: Learn why the 'email' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 12: Learn why the 'email' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- ================= FIELD 3 ================= -->
+          <!-- Interview: Why use type='tel' instead of text? -->
+          <!-- Security: Browser validation is NOT security. -->
+          <!-- Accessibility: Every input has a connected label. -->
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              autocomplete="tel"
+              required
+              pattern="[0-9]{10}"
+            />
+          </div>
+          <!-- Note 1: Learn why the 'phone' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 2: Learn why the 'phone' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 3: Learn why the 'phone' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 4: Learn why the 'phone' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 5: Learn why the 'phone' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 6: Learn why the 'phone' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 7: Learn why the 'phone' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 8: Learn why the 'phone' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 9: Learn why the 'phone' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 10: Learn why the 'phone' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 11: Learn why the 'phone' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 12: Learn why the 'phone' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- ================= FIELD 4 ================= -->
+          <!-- Interview: Why use type='password' instead of text? -->
+          <!-- Security: Browser validation is NOT security. -->
+          <!-- Accessibility: Every input has a connected label. -->
+          <div class="field">
+            <label for="password">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="new-password"
+              required
+              minlength="8"
+            />
+          </div>
+          <!-- Note 1: Learn why the 'password' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 2: Learn why the 'password' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 3: Learn why the 'password' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 4: Learn why the 'password' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 5: Learn why the 'password' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 6: Learn why the 'password' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 7: Learn why the 'password' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 8: Learn why the 'password' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 9: Learn why the 'password' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 10: Learn why the 'password' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 11: Learn why the 'password' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 12: Learn why the 'password' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- ================= FIELD 5 ================= -->
+          <!-- Interview: Why use type='password' instead of text? -->
+          <!-- Security: Browser validation is NOT security. -->
+          <!-- Accessibility: Every input has a connected label. -->
+          <div class="field">
+            <label for="confirm">Confirm Password</label>
+            <input
+              id="confirm"
+              name="confirm"
+              type="password"
+              autocomplete="new-password"
+              required
+            />
+          </div>
+          <!-- Note 1: Learn why the 'confirm' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 2: Learn why the 'confirm' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 3: Learn why the 'confirm' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 4: Learn why the 'confirm' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 5: Learn why the 'confirm' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 6: Learn why the 'confirm' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 7: Learn why the 'confirm' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 8: Learn why the 'confirm' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 9: Learn why the 'confirm' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 10: Learn why the 'confirm' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 11: Learn why the 'confirm' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 12: Learn why the 'confirm' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- ================= FIELD 6 ================= -->
+          <!-- Interview: Why use type='url' instead of text? -->
+          <!-- Security: Browser validation is NOT security. -->
+          <!-- Accessibility: Every input has a connected label. -->
+          <div class="field">
+            <label for="website">Portfolio</label>
+            <input id="website" name="website" type="url" autocomplete="url" />
+          </div>
+          <!-- Note 1: Learn why the 'website' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 2: Learn why the 'website' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 3: Learn why the 'website' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 4: Learn why the 'website' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 5: Learn why the 'website' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 6: Learn why the 'website' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 7: Learn why the 'website' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 8: Learn why the 'website' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 9: Learn why the 'website' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 10: Learn why the 'website' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 11: Learn why the 'website' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 12: Learn why the 'website' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- ================= FIELD 7 ================= -->
+          <!-- Interview: Why use type='search' instead of text? -->
+          <!-- Security: Browser validation is NOT security. -->
+          <!-- Accessibility: Every input has a connected label. -->
+          <div class="field">
+            <label for="search">Search Skill</label>
+            <input id="search" name="search" type="search" autocomplete="off" />
+          </div>
+          <!-- Note 1: Learn why the 'search' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 2: Learn why the 'search' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 3: Learn why the 'search' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 4: Learn why the 'search' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 5: Learn why the 'search' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 6: Learn why the 'search' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 7: Learn why the 'search' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 8: Learn why the 'search' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 9: Learn why the 'search' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 10: Learn why the 'search' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 11: Learn why the 'search' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 12: Learn why the 'search' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- ================= FIELD 8 ================= -->
+          <!-- Interview: Why use type='date' instead of text? -->
+          <!-- Security: Browser validation is NOT security. -->
+          <!-- Accessibility: Every input has a connected label. -->
+          <div class="field">
+            <label for="dob">Date of Birth</label>
+            <input
+              id="dob"
+              name="dob"
+              type="date"
+              autocomplete="bday"
+              required
+            />
+          </div>
+          <!-- Note 1: Learn why the 'dob' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 2: Learn why the 'dob' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 3: Learn why the 'dob' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 4: Learn why the 'dob' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 5: Learn why the 'dob' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 6: Learn why the 'dob' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 7: Learn why the 'dob' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 8: Learn why the 'dob' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 9: Learn why the 'dob' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 10: Learn why the 'dob' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 11: Learn why the 'dob' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 12: Learn why the 'dob' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- ================= FIELD 9 ================= -->
+          <!-- Interview: Why use type='time' instead of text? -->
+          <!-- Security: Browser validation is NOT security. -->
+          <!-- Accessibility: Every input has a connected label. -->
+          <div class="field">
+            <label for="joining">Joining Time</label>
+            <input id="joining" name="joining" type="time" autocomplete="off" />
+          </div>
+          <!-- Note 1: Learn why the 'joining' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 2: Learn why the 'joining' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 3: Learn why the 'joining' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 4: Learn why the 'joining' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 5: Learn why the 'joining' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 6: Learn why the 'joining' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 7: Learn why the 'joining' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 8: Learn why the 'joining' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 9: Learn why the 'joining' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 10: Learn why the 'joining' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 11: Learn why the 'joining' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 12: Learn why the 'joining' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- ================= FIELD 10 ================= -->
+          <!-- Interview: Why use type='color' instead of text? -->
+          <!-- Security: Browser validation is NOT security. -->
+          <!-- Accessibility: Every input has a connected label. -->
+          <div class="field">
+            <label for="favcolor">Favorite Color</label>
+            <input
+              id="favcolor"
+              name="favcolor"
+              type="color"
+              autocomplete="off"
+            />
+          </div>
+          <!-- Note 1: Learn why the 'favcolor' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 2: Learn why the 'favcolor' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 3: Learn why the 'favcolor' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 4: Learn why the 'favcolor' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 5: Learn why the 'favcolor' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 6: Learn why the 'favcolor' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 7: Learn why the 'favcolor' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 8: Learn why the 'favcolor' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 9: Learn why the 'favcolor' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 10: Learn why the 'favcolor' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 11: Learn why the 'favcolor' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 12: Learn why the 'favcolor' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- ================= FIELD 11 ================= -->
+          <!-- Interview: Why use type='number' instead of text? -->
+          <!-- Security: Browser validation is NOT security. -->
+          <!-- Accessibility: Every input has a connected label. -->
+          <div class="field">
+            <label for="experience">Years Experience</label>
+            <input
+              id="experience"
+              name="experience"
+              type="number"
+              autocomplete="off"
+              min="0"
+              max="50"
+              step="1"
+            />
+          </div>
+          <!-- Note 1: Learn why the 'experience' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 2: Learn why the 'experience' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 3: Learn why the 'experience' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 4: Learn why the 'experience' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 5: Learn why the 'experience' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 6: Learn why the 'experience' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 7: Learn why the 'experience' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 8: Learn why the 'experience' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 9: Learn why the 'experience' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 10: Learn why the 'experience' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 11: Learn why the 'experience' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 12: Learn why the 'experience' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- ================= FIELD 12 ================= -->
+          <!-- Interview: Why use type='range' instead of text? -->
+          <!-- Security: Browser validation is NOT security. -->
+          <!-- Accessibility: Every input has a connected label. -->
+          <div class="field">
+            <label for="salary">Expected Salary</label>
+            <input
+              id="salary"
+              name="salary"
+              type="range"
+              autocomplete="off"
+              min="10000"
+              max="100000"
+            />
+          </div>
+          <!-- Note 1: Learn why the 'salary' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 2: Learn why the 'salary' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 3: Learn why the 'salary' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 4: Learn why the 'salary' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 5: Learn why the 'salary' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 6: Learn why the 'salary' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 7: Learn why the 'salary' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 8: Learn why the 'salary' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 9: Learn why the 'salary' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 10: Learn why the 'salary' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 11: Learn why the 'salary' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <!-- Note 12: Learn why the 'salary' field uses attributes like id, name, autocomplete, and validation. Interviewers may ask what happens if these are removed. -->
+          <div class="field">
+            <label for="bio">Short Bio</label>
+            <textarea id="bio" name="bio" rows="4" maxlength="250"></textarea>
+          </div>
+          <div class="field">
+            <label for="country">Country</label>
+            <input list="countries" id="country" name="country" />
+            <datalist id="countries">
+              <option value="India"></option>
+              <option value="USA"></option>
+              <option value="Canada"></option>
+              <option value="Germany"></option>
+              <option value="Japan"></option>
+            </datalist>
+          </div>
+          <div class="field">
+            <label for="photo">Profile Photo</label
+            ><input id="photo" type="file" accept=".jpg,.jpeg,.png,image/*" />
+          </div>
+          <div class="field">
+            <input id="terms" type="checkbox" required /><label for="terms"
+              >I accept Terms</label
+            >
+          </div>
+          <button type="submit">Submit</button>
+          <button type="reset">Reset</button>
+        </fieldset>
+      </form>
+    </main>
+  </body>
+</html>
