@@ -115,7 +115,7 @@ section .infos{
   align-items: center;
 }
 
-.modal .start-game,.modal .game-
+.modal .start-game,.modal .game-over
 {
 
   display: flex;
