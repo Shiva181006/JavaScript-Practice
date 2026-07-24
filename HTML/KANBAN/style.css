@@ -70,7 +70,7 @@ section{
   
   justify-content: space-between;
   
-  flex-grow: 1;/* Take the extra gap which is left in the main section */
+  flex-grow: 1;/* Take the extra gap which is left in the parent */
   gap: var(--padding-xxl);
 }
 
@@ -111,7 +111,7 @@ section .task-column .task{
 }
 
 section .task-column .task button{
-  align-items: flex-end;
+  align-self: flex-end;
   cursor: pointer;
   padding: var(--padding-s) var(--padding-m);
   border-radius: var(--border-radius-s);
@@ -121,3 +121,43 @@ section .task-column .task button{
   color: var(--primary-text-color);
 }
 
+.modal{
+  position: fixed;
+  height: 100vh;
+  width: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+
+}
+
+.modal .center{
+  background-color: var(--bg-button-color);
+  padding: var(--padding-xxl);
+  border-radius: var(--border-radius-m);
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-m);
+  z-index: 10;
+}
+
+.modal.center input, .modal .center textarea, .modal .center select{
+  background-color: var(--bg-task-color);
+  border: none;
+  outline: none;
+  color: var(--primary-text-color);
+  padding: var(--padding-m);
+  border-radius: var(--border-radius-s);
+}
+
+.modal .center button{
+  background-color: var(--bg-button-color);
+   border: none;
+  outline: none;
+  color: var(--primary-text-color);
+  padding: var(--padding-m) var(--padding-l);
+  
+
+}
