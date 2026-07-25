@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%;
+        font-family: sans-serif;
+      }
+
+      body {
+        background-color: #1e1e1e;
+      }
+
+      .container form {
+        margin: 20rem auto;
+        max-width: 70rem;
+        border: 1px solid #8a8a8a;
+        padding: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        border-radius: 0.2rem;
+      }
+
+      .container .form-control {
+        flex: 1 0 20rem;
+      }
+
+      .container .form-control input {
+        width: 100%;
+        border: 1px solid #8a8a8a;
+        background-color: #383737;
+        padding: 1rem;
+        border-radius: 0.2rem;
+        color: #fff;
+      }
+
+      .container .form-control input::placeholder {
+        color: #aaa;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        letter-spacing: 0.1rem;
+      }
+
+      .container .form-control input:focus {
+        outline: none;
+      }
+
+      button {
+        flex: 1 0 10rem;
+        padding: 1rem;
+        border: none;
+        background-color: #525fe1;
+        border-radius: 0.2rem;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+      }
+
+      button:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="#">
+        <div class="form-control">
+          <input type="text" placeholder="Email" />
+        </div>
+
+        <div class="form-control">
+          <input type="password" placeholder="Password" />
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
