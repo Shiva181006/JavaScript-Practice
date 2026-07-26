@@ -1,39 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bubble game</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubble game</title>
 
-  <style>
-    *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html,body{
-      width: 100%;
-      height: 100%;
-    }
-    .main{
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color:greenyellow;
-    }
-    .panel{
-      width: 90%;
-      height: 90%;
-    }
-  </style>
-</head>
-<body>
-  <div class="main">
-    <div class="panel">
-
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      .main {       
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: greenyellow;
+      }
+      .panel {
+        overflow: hidden;
+        width: 90%;
+        height: 90%;
+        border-radius: 10px;
+        background-color: aqua;
+      }
+      .ptop{
+        background-color: blue;
+        width: 100%;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="panel">
+        <div class="ptop">
+          
+        </div>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
