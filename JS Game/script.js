@@ -27,10 +27,19 @@ let snake = [{ x: 1, y: 3 }];
 
 const cols = Math.floor(board.clientWidth / blockWidth);
 const rows = Math.floor(board.clientHeight / blockHeight);
-let food = {
-  x: Math.floor(Math.random() * rows),
-  y: Math.floor(Math.random() * cols),
-};
+let food;
+do{
+    food = {
+        x: Math.floor(Math.random()*rows),
+        y: Math.floor(Math.random()*cols)
+    };
+}
+while(
+    snake.some(segment =>
+        segment.x===food.x &&
+        segment.y===food.y
+    )
+);
 
 // for(let i=0;i<cols*rows;i++){
 //   const block = document.createElement("div");
@@ -57,12 +66,19 @@ function render() {
     head = { x: snake[0].x, y: snake[0].y - 1 };
   } else if (direction === "right") {
     head = { x: snake[0].x, y: snake[0].y + 1 };
-  } else if (direction === "up") {
-    head = { x: snake[0].x + 1, y: snake[0].y };
-  } else if (direction === "down") {
-    head = { x: snake[0].x - 1, y: snake[0].y };
-  }
+  }else if (direction === "up") {
+    head = {
+        x: snake[0].x - 1,
+        y: snake[0].y
+    };
+}
 
+else if (direction === "down") {
+    head = {
+        x: snake[0].x + 1,
+        y: snake[0].y
+    };
+  }
   // wall collision logic
   if (head.x < 0 || head.x >= rows || head.y < 0 || head.y >= cols) {
     // alert("Game Over");
@@ -136,7 +152,8 @@ startButton.addEventListener("click", () => {
 restartButton.addEventListener("click", restartGame);
 
 function restartGame() {
-  
+  clearInterval(intervalId);
+clearInterval(timerIntervalId);
   blocks[`${food.x}-${food.y}`].classList.remove("food");
   snake.forEach((segment) => {
     blocks[`${segment.x}-${segment.y}`].classList.remove("fill");
@@ -164,13 +181,16 @@ function restartGame() {
 
 addEventListener("keydown", (event) => {
   // console.log(event.key)
-  if (event.key == "ArrowUp") {
-    direction = "down";
-  } else if (event.key == "ArrowDown") {
-    direction = "up";
-  } else if (event.key == "ArrowLeft") {
-    direction = "left";
-  } else if (event.key == "ArrowRight") {
-    direction = "right";
-  }
+  if(event.key=="ArrowUp"){
+    direction="up";
+}
+else if(event.key=="ArrowDown"){
+    direction="down";
+}
+else if(event.key=="ArrowLeft"){
+    direction="left";
+}
+else if(event.key=="ArrowRight"){
+    direction="right";
+}
 });
