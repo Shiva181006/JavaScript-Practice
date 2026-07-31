@@ -1,5 +1,5 @@
 let a = 'hello my name is shivaaaa q  ';
-
+// Done using while loop
 let i = a.length-1;
 let length = 0 ;
 // For skip the space from the back
