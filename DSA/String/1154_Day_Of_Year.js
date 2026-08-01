@@ -24,4 +24,4 @@ var dayOfYear = function(date) {
     return ans;
 };
 
-console.log(dayOfYear());
+console.log(dayOfYear("2022-5-18"));
